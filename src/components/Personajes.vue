@@ -29,7 +29,7 @@ export default {
     },
     methods: {
         getPersonajes() {
-            axios.get('http://gateway.marvel.com/v1/public/characters', { params: { "apikey": this.apiKey, "offset": this.offset } })
+            axios.get('https://gateway.marvel.com/v1/public/characters', { params: { "apikey": this.apiKey, "offset": this.offset } })
                 .then(response => {
                     this.personajes = response.data.data.results;
                     this.networkError = false;
@@ -44,7 +44,7 @@ export default {
                 })
         },
         searchPersonaje() {
-            axios.get('http://gateway.marvel.com/v1/public/characters', { params: { "apikey": this.apiKey, "name": this.searchInput } })
+            axios.get('https://gateway.marvel.com/v1/public/characters', { params: { "apikey": this.apiKey, "name": this.searchInput } })
                 .then(response => {
                     this.personajes = response.data.data.results;
                     this.networkError = false;
